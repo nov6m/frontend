@@ -1,0 +1,18 @@
+// Helpers
+@import "helpers/transition";
+
+body {
+  font-family: theme(current-font-family), sans-serif;
+  font-size: 16px;
+  color: theme(black-color);
+  background-color: theme(bg-color);
+}
+.vm--block-scroll {
+  padding-right: 15px;
+  @include below($notebook) {
+    padding-right: 0;
+  }
+}
+.viewer-toolbar {
+  display: none;
+}

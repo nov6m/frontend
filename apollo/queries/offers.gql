@@ -1,0 +1,27 @@
+fragment OfferMain on ComplexSaleObjectType {
+  id
+  name
+}
+query AllOffers {
+  allSales {
+    ...OfferMain
+    previewImage
+    color
+    url
+    complex {
+      name
+    }
+  }
+}
+query OfferByPk($id: Int) {
+  saleByPk(pk: $id) {
+    ...OfferMain
+    text
+    feedbackForm {
+      name
+      subName
+      btnText
+      disclaimer
+    }
+  }
+}

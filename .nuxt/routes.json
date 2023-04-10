@@ -1,0 +1,50 @@
+[
+  {
+    "name": "icons-list",
+    "path": "/_icons",
+    "component": "C:\\Users\\aleks\\Desktop\\frontend\\node_modules\\@nuxtjs\\svg-sprite\\lib\\pages\\icons-list.vue",
+    "_name": "_58d2725e"
+  },
+  {
+    "name": "about",
+    "path": "/about",
+    "component": "C:\\\\Users\\\\aleks\\\\Desktop\\\\frontend\\\\pages\\\\about.vue",
+    "chunkName": "pages/about",
+    "_name": "_b10e48b0"
+  },
+  {
+    "name": "articles",
+    "path": "/articles",
+    "component": "C:\\\\Users\\\\aleks\\\\Desktop\\\\frontend\\\\pages\\\\articles.vue",
+    "chunkName": "pages/articles",
+    "_name": "_5301311c"
+  },
+  {
+    "name": "contact",
+    "path": "/contact",
+    "component": "C:\\\\Users\\\\aleks\\\\Desktop\\\\frontend\\\\pages\\\\contact.vue",
+    "chunkName": "pages/contact",
+    "_name": "_a1a5340a"
+  },
+  {
+    "name": "news",
+    "path": "/news",
+    "component": "C:\\\\Users\\\\aleks\\\\Desktop\\\\frontend\\\\pages\\\\news.vue",
+    "chunkName": "pages/news",
+    "_name": "_10bafb88"
+  },
+  {
+    "name": "services",
+    "path": "/services",
+    "component": "C:\\\\Users\\\\aleks\\\\Desktop\\\\frontend\\\\pages\\\\services.vue",
+    "chunkName": "pages/services",
+    "_name": "_0375ad13"
+  },
+  {
+    "name": "index",
+    "path": "/",
+    "component": "C:\\\\Users\\\\aleks\\\\Desktop\\\\frontend\\\\pages\\\\index.vue",
+    "chunkName": "pages/index",
+    "_name": "_719e9326"
+  }
+]

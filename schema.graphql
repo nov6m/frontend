@@ -1,0 +1,422 @@
+# This file was generated based on ".graphqlconfig". Do not edit manually.
+
+schema {
+  query: Query
+}
+
+type ApartmentObjectType {
+  apartmentNumber: Int!
+  bookingStatus: String
+  ceilingHeight: Decimal
+  created: DateTime!
+  customStatus: String
+  decoration: String
+  entrance: Int
+  floor: Int
+  floorPlanImage: String
+  floorPlanImageLastUrl: String
+  house: HouseObjectType!
+  id: Int
+  isStudio: Boolean!
+  kitchenSpace: Decimal
+  layoutImage: String
+  layoutImageLastUrl: String
+  minMortgage: Int
+  modified: DateTime
+  price: Decimal
+  publicationStatus: String!
+  rooms: Int
+  square: Decimal
+  status: Boolean
+  syncId: String!
+  url: String
+  viewFromWindows: String
+}
+
+type CompletedProjectsObjectType {
+  address: String
+  completedDate: Date!
+  complex: ComplexObjectType
+  content: String
+  created: DateTime!
+  group: GroupCompletedProjectsObjectType!
+  id: Int
+  image: String
+  modified: DateTime
+  photoText: String
+  publicationStatus: CompletedProjectsPublicationStatus!
+  status: Boolean
+}
+
+type ComplexAcquisitionMethodsObjectType {
+  complex: ComplexObjectType!
+  created: DateTime!
+  feedbackForm: FeedbackFormObjectType
+  id: Int
+  image: String
+  modified: DateTime
+  name: String!
+  otherText: String
+  status: Boolean
+}
+
+type ComplexBenefitsObjectType {
+  complex: ComplexObjectType!
+  created: DateTime!
+  id: Int
+  image: String!
+  modified: DateTime
+  name: String!
+  status: Boolean
+}
+
+type ComplexFileObjectType {
+  complex: ComplexObjectType!
+  created: DateTime!
+  file: String!
+  id: Int
+  modified: DateTime
+  name: String
+  size: String
+  status: Boolean
+}
+
+type ComplexGalleryObjectType {
+  complex: ComplexObjectType!
+  created: DateTime!
+  id: Int
+  image: String!
+  modified: DateTime
+  status: Boolean
+}
+
+type ComplexInfrastructureObjectType {
+  accessibilityIndex: Int!
+  address: String
+  complex: ComplexObjectType!
+  coords: String
+  created: DateTime!
+  group: InfrastructureGroupObjectType!
+  id: Int
+  imageOffset: String
+  imageSize: String
+  layout: String
+  length: Int
+  modified: DateTime
+  name: String
+  status: Boolean
+  step: ComplexInfrastructureStep
+  type: ComplexInfrastructureType
+}
+
+type ComplexObjectType {
+  about: String
+  acquisitionMethods: [ComplexAcquisitionMethodsObjectType!]!
+  apartmentCount: Int
+  benefits: [ComplexBenefitsObjectType!]!
+  color: String
+  completedProjects: [CompletedProjectsObjectType!]!
+  countApartments: Int
+  created: DateTime!
+  files: [ComplexFileObjectType!]!
+  gallery: [ComplexGalleryObjectType!]!
+  hasParking: Boolean!
+  houses: [HouseObjectType]
+  id: Int
+  image: String
+  imageAbout: String
+  imageMapHouses: String
+  infrastructures: [ComplexInfrastructureObjectType!]!
+  mapIcon: String
+  menuImage: String
+  minPrice: Decimal
+  modified: DateTime
+  name: String!
+  nameMini: String
+  progress: [ComplexProgressObjectType!]!
+  publicationStatus: ComplexPublicationStatus!
+  saleOffice: ComplexSalesOfficeObjectType
+  sales: [ComplexSaleObjectType!]!
+  status: Boolean
+  street: String
+  subName: String
+  syncId: String!
+  tags: GenericScalar
+  url: String
+  videoUrl: String
+}
+
+type ComplexProgressObjectType {
+  complex: ComplexObjectType!
+  created: DateTime!
+  date: Date!
+  id: Int
+  image: String!
+  modified: DateTime
+  status: Boolean
+}
+
+type ComplexSaleObjectType {
+  color: String!
+  complex: ComplexObjectType
+  created: DateTime!
+  feedbackForm: FeedbackFormObjectType
+  id: Int
+  modified: DateTime
+  name: String
+  previewImage: String!
+  publicationStatus: String!
+  shortName: String
+  status: Boolean
+  text: String
+  url: String
+}
+
+type ComplexSalesOfficeObjectType {
+  address: String
+  complex: ComplexObjectType!
+  coords: String
+  created: DateTime!
+  iconMap: String!
+  id: Int
+  image: String!
+  modified: DateTime
+  phone: String
+  status: Boolean
+  workTime: String
+}
+
+type FeedbackFormObjectType {
+  acquisitionMethods: [ComplexAcquisitionMethodsObjectType!]!
+  btnText: String
+  code: String
+  created: DateTime!
+  disclaimer: String
+  id: Int
+  modified: DateTime
+  name: String
+  publicationStatus: FeedbackFormPublicationStatus!
+  sales: [ComplexSaleObjectType!]!
+  status: Boolean
+  subName: String
+}
+
+type GroupCompletedProjectsObjectType {
+  completedProjects: [CompletedProjectsObjectType!]!
+  created: DateTime!
+  id: Int
+  modified: DateTime
+  name: String
+  status: Boolean
+}
+
+type HouseObjectType {
+  address: String
+  apartmentCount: Int
+  apartments: [ApartmentObjectType!]!
+  complex: ComplexObjectType
+  complexPointPosition: String
+  coords: String
+  countApartments: Int
+  countFloors: Int
+  created: DateTime!
+  deliveryDate: Date!
+  houseNumber: String
+  houseType: HouseHouseType
+  id: Int
+  image: String
+  minPrice: Decimal
+  modified: DateTime
+  parking: String
+  "В формате SVG"
+  parkingSpaceImage: String
+  parkingSpaces: [ParkingSpacesObjectType!]!
+  publicationStatus: HousePublicationStatus!
+  status: Boolean
+  syncId: String!
+}
+
+type InfrastructureGroupObjectType {
+  color: String!
+  count: Int
+  created: DateTime!
+  id: Int
+  image: String
+  infrastructures: [ComplexInfrastructureObjectType!]!
+  modified: DateTime
+  name: String!
+  status: Boolean
+}
+
+type NewsObjectType {
+  created: DateTime!
+  description: String
+  id: Int
+  modified: DateTime
+  name: String!
+  publicationDate: Date
+  publicationStatus: NewsPublicationStatus!
+  shortDescription: String
+  status: Boolean
+  url: String
+}
+
+type ParkingSpacesObjectType {
+  bookingStatus: ParkingSpacesBookingStatus
+  created: DateTime!
+  house: HouseObjectType!
+  id: Int
+  modified: DateTime
+  number: Int
+  price: Decimal
+  square: Decimal
+  status: Boolean
+  syncId: String!
+}
+
+type Query {
+  allCompletedProjects(excludePk: [Int], group: String, limit: Int, orderBy: String): [CompletedProjectsObjectType]
+  allComplex(excludePk: [Int], limit: Int, orderBy: String): [ComplexObjectType]
+  allInfrastructureGroups(complexPk: Int, excludePk: [Int], limit: Int, orderBy: String): [InfrastructureGroupObjectType]
+  allNews(excludePk: [Int], limit: Int, orderBy: String): [NewsObjectType]
+  allSales(excludePk: [Int], limit: Int, orderBy: String): [ComplexSaleObjectType]
+  allVacancies(excludePk: [Int], limit: Int, orderBy: String): [VacancyObjectType]
+  apartment(pk: Int): ApartmentObjectType
+  apartmentByComplex(complexId: Int, excludePk: [Int], limit: Int, orderBy: String, uniqueFields: [String]): [ApartmentObjectType]
+  apartmentByPk(excludePk: [Int], limit: Int, orderBy: String, pk: [Int]): [ApartmentObjectType]
+  complex(pk: Int): ComplexObjectType
+  house(pk: Int): HouseObjectType
+  newsByPk(pk: Int): NewsObjectType
+  parkingSpacesByPk(pk: Int): ParkingSpacesObjectType
+  popularApartmentByComplex(complexId: Int, excludePk: [Int]): [ApartmentObjectType]
+  saleByPk(pk: Int): ComplexSaleObjectType
+  settingsByCode(code: String): SettingsObjectType
+  similarApartments(apartmentId: Int, excludePk: [Int]): [ApartmentObjectType]
+  vacancyByPk(pk: Int): VacancyObjectType
+}
+
+type SettingsObjectType {
+  created: DateTime!
+  id: Int
+  modified: DateTime
+  settings: GenericScalar
+  status: Boolean
+}
+
+type VacancyObjectType {
+  category: String
+  city: String
+  created: DateTime!
+  description: String
+  experience: String
+  id: Int
+  modified: DateTime
+  name: String!
+  publicationStatus: VacancyPublicationStatus!
+  rate: String
+  status: Boolean
+  url: String
+}
+
+enum CompletedProjectsPublicationStatus {
+  "Draft"
+  D
+  "Published"
+  P
+}
+
+enum ComplexInfrastructureStep {
+  "Строиться"
+  BUILD
+  "Арендованная"
+  RENTED
+}
+
+enum ComplexInfrastructureType {
+  "Больница"
+  BOL_NITSA
+  "Университет"
+  UNIVERSITET
+}
+
+enum ComplexPublicationStatus {
+  "Draft"
+  D
+  "Published"
+  P
+}
+
+enum FeedbackFormPublicationStatus {
+  "Draft"
+  D
+  "Published"
+  P
+}
+
+enum HouseHouseType {
+  "Блочный"
+  BLOCHNYI
+  "Кирпичный"
+  KIRPICHNYI
+  "Монолитно-кирпичный"
+  MONOLITNO_KIRPICHNYI
+  "Монолитный"
+  MONOLITNYI
+  "Панельный"
+  PANEL_NYI
+}
+
+enum HousePublicationStatus {
+  "Draft"
+  D
+  "Published"
+  P
+}
+
+enum NewsPublicationStatus {
+  "Draft"
+  D
+  "Published"
+  P
+}
+
+enum ParkingSpacesBookingStatus {
+  "квартира в продаже"
+  A_1
+  "квартира забронирована"
+  A_2
+  "квартира продана"
+  A_3
+}
+
+enum VacancyPublicationStatus {
+  "Draft"
+  D
+  "Published"
+  P
+}
+
+
+"""
+The `DateTime` scalar type represents a DateTime
+value as specified by
+[iso8601](https://en.wikipedia.org/wiki/ISO_8601).
+"""
+scalar DateTime
+
+"The `Decimal` scalar type represents a python Decimal."
+scalar Decimal
+
+"""
+The `GenericScalar` scalar type represents a generic
+GraphQL scalar value that could be:
+String, Boolean, Int, Float, List or Object.
+"""
+scalar GenericScalar
+
+"""
+The `Date` scalar type represents a Date
+value as specified by
+[iso8601](https://en.wikipedia.org/wiki/ISO_8601).
+"""
+scalar Date

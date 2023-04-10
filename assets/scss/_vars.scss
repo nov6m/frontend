@@ -1,0 +1,44 @@
+// Breakpoints
+$desktopLrg: 1920px;
+$desktopDef: 1440px;
+$desktopSml: 1280px;
+$notebook:   1024px;
+$tablet:      768px;
+$mobileLrg:   578px;
+$mobileDef:   480px;
+$mobileSml:   360px;
+
+:root {
+  //FONTS
+  --current-font-family: "ProximaNova";
+
+  //BORDER-RADIUS
+  --ui-radius-large: 10px;
+  --ui-radius: 10px;
+  --ui-radius-small: 8px;
+
+  // COLORS
+  --white-color: #ffffff;
+  --black-color: #292929;
+  --black-dark: #000000;
+  --dark: #333333;
+  --light: #FAFAFA;
+  --current-color: #2fa860;
+  --current-dark-color: #297d4b;
+  --current-extra-light-color: #FFF3F6;
+  --bg-color: #ffffff;
+  --grey: #979797;
+  --grey-dark: #666666;
+  --grey-light: #D5D5D6;
+  --green: #1BA943;
+  --blue: #1A187B;
+}
+
+// Bootstrap breakpoints
+$grid-breakpoints: (
+  xs: 0,
+  sm: 578px,
+  md: 768px,
+  lg: 1024px,
+  xl: 1280px
+);

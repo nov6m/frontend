@@ -1,0 +1,9 @@
+query ComplexByPk($id: Int) {
+  complex(pk: $id) {
+    benefits {
+      id
+      name
+      image
+    }
+  }
+}

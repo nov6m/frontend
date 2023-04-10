@@ -1,0 +1,19 @@
+fragment NewMain on NewsObjectType {
+  id
+  name
+}
+
+query AllNews($limit: Int) {
+  allNews(limit: $limit) {
+    ...NewMain
+    shortDescription
+    publicationDate
+    url
+  }
+}
+query NewByPk($id: Int) {
+  newsByPk(pk: $id) {
+    ...NewMain
+    description
+  }
+}

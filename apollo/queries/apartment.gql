@@ -1,0 +1,57 @@
+fragment ApartmentMainInfo on ApartmentObjectType {
+  id
+  price
+  floor
+  rooms
+  square
+  layoutImage
+  floorPlanImage
+  isStudio
+  minMortgage
+  url
+}
+fragment BenefitsFields on ComplexBenefitsObjectType {
+  id
+  name
+  image
+}
+fragment ComplexFields on ComplexObjectType {
+  id
+  name
+  tags
+  color
+  benefits {
+    ...BenefitsFields
+  }
+}
+fragment HouseFields on HouseObjectType {
+  id
+  coords
+  address
+  countFloors
+  complex {
+    ...ComplexFields
+  }
+}
+query ApartmentsByPk($id: [Int], $orderBy: String!) {
+  apartmentByPk(pk: $id, orderBy: $orderBy) {
+    ...ApartmentMainInfo
+    house {
+      ...HouseFields
+    }
+  }
+}
+query ApartmentByPk($id: Int) {
+  apartment(pk: $id) {
+    ...ApartmentMainInfo
+    apartmentNumber
+    viewFromWindows
+    decoration
+    kitchenSpace
+    ceilingHeight
+    bookingStatus
+    house {
+      ...HouseFields
+    }
+  }
+}
