@@ -20,7 +20,7 @@
 
 <script>
 export default {
-  name: 'VacancyFilter',
+  name: 'ServicesFilter',
   props: {
     filters: {
       type: Object,

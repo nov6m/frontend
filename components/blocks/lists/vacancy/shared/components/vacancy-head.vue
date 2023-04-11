@@ -7,7 +7,7 @@
 
 <script>
 export default {
-  name: 'VacancyHead',
+  name: 'ServicesHead',
   props: {
     city: {
       type: Boolean,

@@ -1,16 +1,16 @@
 <template>
   <div class="page" :data-route="$route.fullPath">
-    <OfferCard />
+    <NewsCard />
   </div>
 </template>
 
 <script>
-import OfferCard from '@/components/blocks/cards/offer/index'
+import NewsCard from '@/components/blocks/cards/offer/index'
 
 export default {
   name: 'IndexPage',
   components: {
-    OfferCard
+    NewsCard
   }
 }
 </script>

@@ -7,7 +7,7 @@
       v-if="fields.title"
     ) {{ fields.title }}
     .managers__items
-      card-manager(
+      card-reviews(
         v-for="(item, idx) in items"
         :key="idx"
         :img="item.img"
@@ -25,12 +25,12 @@
 </template>
 
 <script>
-import CardManager from './shared/components/card-manager'
+import CardReviews from './shared/components/card-manager'
 import { isNotEmptyArray } from '@/core/utils/type'
 
 export default {
-  name: 'ManagersList',
-  components: { CardManager },
+  name: 'ReviewsList',
+  components: { CardReviews },
   props: {
     fields: {
       type: Object,

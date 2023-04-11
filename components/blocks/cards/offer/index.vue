@@ -26,7 +26,7 @@ import OfferForm from './shared/components/form'
 import block from '@/core/mixins/block'
 
 export default {
-  name: 'OfferCard',
+  name: 'NewsCard',
   components: { OfferForm },
   props: {
     offer: {

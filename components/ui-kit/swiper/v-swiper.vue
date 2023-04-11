@@ -1,24 +1,24 @@
 <template lang="pug">
-  .swiper
-    .swiper-container(
-      v-swiper="options"
+.swiper
+  .swiper-container(
+    v-swiper="options"
+  )
+    .swiper-wrapper(
+      :id="wrapId"
     )
-      .swiper-wrapper(
-        :id="wrapId"
-      )
-        slot
-      slot(
-        name="wrapper-in"
-      )
+      slot
     slot(
-      name="nav"
+      name="wrapper-in"
     )
-    slot(
-      name="progress"
-    )
-    slot(
-      name="thumb"
-    )
+  slot(
+    name="nav"
+  )
+  slot(
+    name="progress"
+  )
+  slot(
+    name="thumb"
+  )
 </template>
 
 <script>

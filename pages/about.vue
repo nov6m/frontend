@@ -1,9 +1,9 @@
 <template>
   <div class="page" :data-route="$route.fullPath">
     <InfoAbout />
-    <AwardsSlider />
+    <AwardsSlider :item-num="1" />
     <AlternativeAbout :fields="aim" />
-    <AwardsSlider :fields="awards" />
+    <AwardsSlider :fields="awards" :item-num="2" />
     <AlternativePromoBanner />
   </div>
 </template>
@@ -35,37 +35,37 @@ export default {
         items: [
           {
             img: 'https://ksmrus.ru/pic/userfile/images/Кардиолог.jpg',
-            year: 2023,
+            year: '2024',
             description: 'Мы открылись во всех городах России'
           },
           {
             img: 'https://ksmrus.ru/pic/userfile/images/Кардиолог.jpg',
-            year: 2023,
+            year: '2024',
             description: 'Мы открылись во всех городах России'
           },
           {
             img: 'https://ksmrus.ru/pic/userfile/images/Кардиолог.jpg',
-            year: 2023,
+            year: '2024',
             description: 'Мы открылись во всех городах России'
           },
           {
             img: 'https://ksmrus.ru/pic/userfile/images/Кардиолог.jpg',
-            year: 2023,
+            year: '2024',
             description: 'Мы открылись во всех городах России'
           },
           {
             img: 'https://ksmrus.ru/pic/userfile/images/Кардиолог.jpg',
-            year: 2023,
+            year: '2024',
             description: 'Мы открылись во всех городах России'
           },
           {
             img: 'https://ksmrus.ru/pic/userfile/images/Кардиолог.jpg',
-            year: 2023,
+            year: '2024',
             description: 'Мы открылись во всех городах России'
           },
           {
             img: 'https://ksmrus.ru/pic/userfile/images/Кардиолог.jpg',
-            year: 2023,
+            year: '2024',
             description: 'Мы открылись во всех городах России'
           }
         ]

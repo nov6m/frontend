@@ -1,20 +1,20 @@
 <template>
   <div class="page" :data-route="$route.fullPath">
-    <VacancyList />
-    <VacancyList :fields="fields" />
+    <ServicesList />
+    <ServicesList :fields="fields" />
     <AlternativePromoBanner />
   </div>
 </template>
 
 <script>
 import AlternativePromoBanner from '@/components/blocks/banners/promo/alternative'
-import VacancyList from '@/components/blocks/lists/vacancy/index'
+import ServicesList from '@/components/blocks/lists/vacancy/index'
 
 export default {
   name: 'IndexPage',
   components: {
     AlternativePromoBanner,
-    VacancyList
+    ServicesList
   },
   data() {
     return {

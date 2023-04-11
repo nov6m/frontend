@@ -9,6 +9,7 @@
       ) {{ fields.title }}
       v-swiper.awards-slider__slider(
         :options="swiperOption"
+        :wrap-id="Date.now()"
       )
         v-swiper-slide(
           v-for="(item, idx) in fields.items"
@@ -21,7 +22,7 @@
             :color="item.color"
           )
       v-swiper-navigation.awards-slider__nav(
-        target="sliders-awards"
+        :target="'sliders-awards' + itemNum"
         position="top"
       )
 </template>
@@ -78,6 +79,10 @@ export default {
           ]
         }
       }
+    },
+    itemNum: {
+      type: String,
+      default: ''
     }
   },
   data() {
@@ -87,8 +92,8 @@ export default {
         spaceBetween: 10,
         loop: false,
         navigation: {
-          nextEl: '.sliders-awards-next',
-          prevEl: '.sliders-awards-prev'
+          nextEl: `.sliders-awards${this.$props.itemNum}-next`,
+          prevEl: `.sliders-awards${this.$props.itemNum}-prev`
         },
         breakpoints: {
           480: {

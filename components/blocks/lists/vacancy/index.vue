@@ -4,17 +4,18 @@
     v-title.vacancy__title(
       v-if="fields.title"
     ) {{ fields.title }}
-    vacancy-filter(
+      services-filter(
       v-if="Object.entries(fields.filters).length !== 0"
       :filters="fields.filters"
       @update:filter="fields.filters = $event"
+      @click:find="updateData"
     )
     .vacancy__items(
       v-if="isNotEmptyArray(fields.items)"
     )
-      vacancy-head(:city="fields.city")
-      vacancy-card.vacancy__item(
-        v-for="item in fields.items"
+      services-head(:city="fields.city")
+      services-card.vacancy__item(
+        v-for="item in updateData(fields.items)"
         :key="item.key"
         :experience="item.experience"
         :text="item.description"
@@ -28,15 +29,15 @@
 </template>
 
 <script>
-import VacancyFilter from './shared/components/vacancy-filter'
-import VacancyCard from './shared/components/vacancy-card'
-import VacancyHead from './shared/components/vacancy-head'
+import ServicesFilter from './shared/components/vacancy-filter'
+import ServicesCard from './shared/components/vacancy-card'
+import ServicesHead from './shared/components/vacancy-head'
 import { isNotEmptyArray } from '@/core/utils/type'
 import Api from '@/core/Api'
 
 export default {
-  name: 'VacancyList',
-  components: { VacancyHead, VacancyCard, VacancyFilter },
+  name: 'ServicesList',
+  components: { ServicesHead, ServicesCard, ServicesFilter },
   props: {
     fields: {
       type: Object,
@@ -54,7 +55,7 @@ export default {
               name: 'Перевозка в один конец'
             },
             {
-              key: '1',
+              key: '2',
               experience: '',
               description: 'Доставим вас от квартиры до выбранного места',
               category: '900 р.',
@@ -63,7 +64,7 @@ export default {
               name: 'Перевозка в один конец'
             },
             {
-              key: '1',
+              key: '3',
               experience: '',
               description: 'Доставим вас от квартиры до выбранного места и затем назад',
               category: '3000 р.',
@@ -72,7 +73,7 @@ export default {
               name: 'Перевозка туда обратно'
             },
             {
-              key: '1',
+              key: '4',
               experience: '',
               description: 'Доставим вас от квартиры до выбранного места и затем назад',
               category: '2500 р.',
@@ -81,7 +82,7 @@ export default {
               name: 'Перевозка в один конец'
             },
             {
-              key: '1',
+              key: '5',
               experience: '',
               description: 'Доставим вас от квартиры до выбранного места',
               category: '1000 р.',
@@ -113,7 +114,7 @@ export default {
             category: '',
             categoryItems: [
               {
-                key: '4',
+                key: '1',
                 name: 'Перевозка в один конец'
               },
               {
@@ -126,33 +127,24 @@ export default {
       }
     }
   },
-  async fetch() {
-    await this.updateData()
-  },
   methods: {
     isNotEmptyArray,
-    async updateData() {
+    updateData(data) {
       const formData = {
         city: [],
         category: []
       }
-      if (this.filters.city?.key) {
-        formData.city.push(this.filters.city.key)
+      if (this.fields.filters.category && this.fields.filters.category.name !== 'Все') {
+        formData.category.push(this.fields.filters.category)
       }
-      if (this.filters.category?.key) {
-        formData.category.push(this.filters.category.key)
+      if (this.fields.filters.city && this.fields.filters.city.name !== 'Все') {
+        formData.city.push(this.fields.filters.city)
       }
-      const { vacancy, filters } = await Api.getFilterVacancy(formData)
-      if (vacancy) {
-        this.items = vacancy.data[0].values
+      if ((formData.city.length === 0 && formData.category.length === 0)) {
+        return data
       }
-      if (isNotEmptyArray(filters)) {
-        filters.forEach((el) => {
-          if (el.name in this.filters) {
-            this.filters[el.name + 'Items'] = el.values[0].values
-          }
-        })
-      }
+      const notReactiveData = JSON.parse(JSON.stringify(data))
+      return notReactiveData.filter(el => ((formData.city.length !== 0 && el.city === formData.city[0].name) && (formData.category.length !== 0 && el.name === formData.category[0].name)) || (formData.city.length !== 0 && el.city === formData.city[0].name && formData.category.length === 0) || (formData.category.length !== 0 && formData.city.length === 0 && el.name === formData.category[0].name))
     }
   }
 }
